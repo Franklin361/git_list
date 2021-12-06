@@ -1,0 +1,30 @@
+.container_inputs_find {
+  display: flex;
+  margin: 1.7em 0;
+  gap: 1.5em;
+}
+
+.input_filter {
+  flex: 1;
+  outline: 1px solid var(--grey);
+  border: none;
+  border-radius: 8px;
+  background-color: var(--bg);
+  padding: 0.8em;
+  font-size: 1.1em;
+  color: var(--white);
+  letter-spacing: 1px;
+}
+
+.container_btn_filter {
+  display: flex;
+  gap: 0.7em;
+}
+
+
+@media screen and (max-width: 600px) {
+  .container_inputs_find {
+    flex-direction: column;
+    width: 100%;
+  }
+}

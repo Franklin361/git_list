@@ -1,0 +1,125 @@
+.image-profile{
+    background-color: var(--white);
+    width: 220px;
+    height: 220px;
+    border-radius: 100%;
+    overflow: hidden;
+    outline: 2px solid var(--white);
+    margin: auto;
+    margin-bottom: 2em;
+}
+.image-profile > img {
+    object-fit: cover;
+    vertical-align: top;
+    width: 100%;
+}
+.container{
+    color: var(--grey);
+}
+.ocuppation{
+    font-weight: 500;
+    font-size: 1.05em;
+}
+.name{
+    color: var(--grey-2);
+    margin: .5em 0;
+}
+.username{
+    font-weight: 400;
+    font-size: 1.4em;
+    margin: .5em 0;
+}
+.container_btn{
+    display: flex;
+    justify-content:space-between;
+    align-items: stretch;
+    gap: 1em;
+    margin: 1.7em 0em 1.7em 0em;
+}
+.btn{
+    flex: 1;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    cursor: pointer;
+    background-color: var(--black-2);
+    color: var(--white);
+    border-radius: 6px;
+    outline: 1px solid var(--grey-2);
+    border: none;
+    padding: .5em 0;
+    gap: .5em;
+    font-weight: bold;
+}
+.btn:hover{
+    background-color: var(--button);
+}
+.follow_details, .container_icon, .container_icon_follow,.following{
+    display: flex;
+    align-items: center;
+}
+.follow_details{
+    gap: .5em;
+}
+.container_icon, .container_icon_follow, .following{
+    gap: .5em;
+}
+.follow_details, .container_icon {
+    margin: 1em 0;
+    font-size: 1em;
+}
+.bold{
+    font-weight: 600;
+    color: var(--grey-2);
+}
+
+
+@media screen and (max-width: 600px){
+    .image-profile{
+        width: 100px;
+        height: 100px;
+        margin: 0;
+    }
+    .profile-info{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        align-items: center;
+        margin-bottom: 1.5em;
+        gap: 1em;
+    }
+    .info_user{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .container_btn{
+        margin: 1em 0em 1em 0em;
+    }
+    .inline-movil-property{
+        display: flex;
+        gap: .4em;
+        margin: 1em 0;
+    }
+    .follow_details{
+        gap: .4em;
+    }
+    .following{
+        gap: .4em;
+        font-size: .9em;
+    }
+    .followers{
+        gap: .5em;
+        font-size: .9em;
+    }
+    .bold{
+        font-size: .9em;
+    }
+    .starts, .follow_details{
+        margin: 0;
+    }
+    .name{
+        font-size: 1.4em;
+    }
+    .username{
+        font-size: 1.2em;
+    }
+}

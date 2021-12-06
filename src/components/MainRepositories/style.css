@@ -1,0 +1,28 @@
+.container_repositories_user {
+  width: 92%;
+  margin: auto;
+  height: 100%;
+}
+.title_main_repositories {
+  font-size: 1.4em;
+  color: var(--white);
+  font-weight: 600;
+  letter-spacing: 1.4px;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: #333538;
+}
+
+@media screen and (max-width: 600px) {
+  .title_main_repositories {
+    display: none;
+  }
+  .container_repositories_user {
+    width: 100%;
+    margin: 0;
+    height: auto;
+  }
+}

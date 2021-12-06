@@ -1,0 +1,138 @@
+.input_select {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1em;
+  gap: 0.5em;
+  cursor: pointer;
+  border-radius: 8px;
+  color: var(--white);
+  background-color: var(--button-color);
+  border: none;
+  font-size: 1.1em;
+  font-weight: bold;
+  width: 100%;
+  height: 100%;
+}
+.input_select:hover {
+  background-color: var(--black-2);
+}
+
+.container_select_input {
+  position: relative;
+}
+
+.container_list_options {
+  position: absolute;
+  background: var(--button-color);
+  left: 0;
+  top: 120%;
+  min-width: 150px;
+  min-height: 35px;
+  border-radius: 5px 5px 5px 5px;
+  display: none;
+
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--black-2);
+  z-index: 99;
+}
+
+.item_option {
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  display: inline-block;
+  padding: 0.5em;
+  border-bottom: 1px solid var(--bg);
+  background: var(--button-color);
+}
+.no-border {
+  border: none;
+}
+
+.item_option:hover {
+  background: var(--purple);
+}
+.item_option::selection {
+  background: rgba(113, 76, 214, 0);
+}
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]:checked ~ .container_list_options {
+  animation: 0.3s linear optionsList;
+  display: flex;
+}
+.default> label, .default {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+.default{
+  display: none;
+  justify-content: space-between;
+
+  color: white;
+  font-weight: bold;
+  padding: 0.5em;
+  /* border-bottom: 1px solid var(--bg); */
+  background: var(--button-color);
+}
+
+
+.bg_overlay_sort {
+  /* display: block; */
+  display: none;
+  background-color: #0000004f;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+input[type="checkbox"]:checked ~ .bg_overlay_sort {
+  display: block;
+}
+
+@keyframes optionsList {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .input_select {
+    font-size: 0.95em;
+    padding: 0.5em 0.7em;
+    gap: 0.2em;
+    flex: 1;
+    justify-content: center;
+  }
+  .container_list_options{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    min-width: 85%;
+    background: var(--black);
+    border: 1px solid rgba(255, 255, 255, 0.541);
+  }
+  .item_option{
+    padding: 1em;
+    background: var(--black);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.322);
+  }
+  .default{
+    display: flex;
+    padding: 1em;
+    background: var(--black-2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.322);
+  }
+}
