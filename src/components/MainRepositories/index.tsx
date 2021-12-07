@@ -10,6 +10,8 @@ interface IProps{
 }
 
 const index = ({ repos, publicRepos }:IProps) => {
+
+    
     return (
         <div className="container_repositories_user">
 
@@ -20,7 +22,7 @@ const index = ({ repos, publicRepos }:IProps) => {
             <div className="divider" />
 
             {
-                repos.slice(0,5).map(repo => (
+                repos.map(repo => (
                     <RepositoryItem key={repo.id} repoInfo={repo}/>
                 ))
             }

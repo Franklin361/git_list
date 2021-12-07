@@ -1,15 +1,16 @@
-import { Icon } from '../IconSVG/index';
 
 import './formRepository.css'
 import { InputFilter } from './InputFilter';
 import { useForm } from '../../hooks/useForm';
+import { useDebounce } from '../../hooks/useDebounce';
 
 export const FormSearchRepository = () => {
 
-    const { form, handleSubmit, onChange } = useForm()
+    const { form, onChange } = useForm();
+    useDebounce(form, 500);
 
     return (
-        <form className="container_inputs_find" onSubmit={handleSubmit}>
+        <div className="container_inputs_find">
 
             <input 
                 className="input_filter" 
@@ -24,6 +25,6 @@ export const FormSearchRepository = () => {
                 <InputFilter name="Languaje" label="op2" options={["Javascript", "Typescript", "Csharp"]}/>
                 <InputFilter name="Sort" label="op3" options={["Last Updated", "Name", "Stars"]}/>
             </div>
-        </form>
+        </div>
     )
 }

@@ -7,3 +7,8 @@ https://docs.github.com/en/rest/overview/resources-in-the-rest-api#pagination
 FILTROS
 https://docs.github.com/en/rest/reference/repos
 https://docs.github.com/en/rest/reference/users
+
+
+https://api.github.com/repos/Franklin361
+
+https://api.github.com/search/repositories?q=

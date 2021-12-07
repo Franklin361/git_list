@@ -27,7 +27,7 @@ const index = () => {
 
             <label className="overlay_back" htmlFor="modal_user"/>
 
-            <form className={`modal_search_user`} onSubmit={handleSubmit}>
+            <form className={`modal_search_user`} onSubmit={(e)=>handleSubmit(e,'user')}>
                 <label htmlFor="userinput" className="title_modal">Search any user</label>
                 <input 
                     type="text" 

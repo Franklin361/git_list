@@ -1,6 +1,9 @@
 import { useContext, useState } from 'react';
 import { SearchContext } from '../context/SearchContext';
 
+type Search = 'repository' | 'user';
+type FormEvent =  React.FormEvent<HTMLFormElement> | HTMLFormElement;
+
 export const useForm = () => {
 
     const [form, setForm] = useState("");
@@ -10,11 +13,13 @@ export const useForm = () => {
         setForm(target.value)
     };
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement> | HTMLFormElement) => {
+    const handleSubmit = (e: FormEvent, typeSubmit:Search) => {
         e.preventDefault();
         if(form.trim().length !== 0){
-            searchUser(form);
-            setForm("")
+            
+            if(typeSubmit === 'user') searchUser(form);
+            
+            setForm("");
         };
     };
 
