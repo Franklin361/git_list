@@ -138,4 +138,9 @@
     .updated,.tech_name,.start_mini_number,.git_mini_number{
         font-size: .85em;
     }
+    .container_title{
+        gap: 1em;
+        align-items: flex-start;
+        flex-direction: column;
+    }
 }

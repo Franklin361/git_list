@@ -3,3 +3,7 @@ https://api.github.com/users/LeonidasEsteban
 
 PAGINACION DE REPOSITORIOS
 https://docs.github.com/en/rest/overview/resources-in-the-rest-api#pagination
+
+FILTROS
+https://docs.github.com/en/rest/reference/repos
+https://docs.github.com/en/rest/reference/users

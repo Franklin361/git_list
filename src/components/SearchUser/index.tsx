@@ -2,11 +2,14 @@
 import { LegacyRef, RefObject, useRef } from 'react';
 import { Icon } from '../IconSVG';
 import './style.css';
+import { useForm } from '../../hooks/useForm';
 
 const index = () => {
 
     const inputRef = useRef() as RefObject<HTMLInputElement>;
-    const ref = useRef(inputRef.current?.checked)
+    const ref = useRef(inputRef.current?.checked);
+
+    const { form, handleSubmit, onChange } = useForm();
 
     return (
         <>
@@ -24,13 +27,20 @@ const index = () => {
 
             <label className="overlay_back" htmlFor="modal_user"/>
 
-            <div className={`modal_search_user`}>
+            <form className={`modal_search_user`} onSubmit={handleSubmit}>
                 <label htmlFor="userinput" className="title_modal">Search any user</label>
-                <input type="text" id="userinput" className="input_user" placeholder="Username"/>
-                <button className="btn_modal_user">
+                <input 
+                    type="text" 
+                    id="userinput" 
+                    className="input_user" 
+                    placeholder="Username"
+                    onChange={onChange}
+                    value={form}
+                />
+                <button className="btn_modal_user" type="submit">
                     <label htmlFor="modal_user">Buscar</label>
                 </button>
-            </div>  
+            </form>  
         </>
     )
 }

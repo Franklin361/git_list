@@ -84,3 +84,23 @@
 .modal_user:checked ~ .overlay_back{
     display: block;
 }
+
+@media screen and (max-width: 600px) {
+    .modal_search_user{
+        width: 90vw;
+        min-width:  100px;
+        gap: 2em;
+        padding: 2.5em 1em;
+        text-align: center;
+    }
+    .title_modal{
+        font-size: 1.5em;
+    }
+    .input_user{
+        font-size: 1.3em;
+    }
+.container_icon_search{
+    bottom: 30px;
+    right: 10px;
+}
+}
