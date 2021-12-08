@@ -12,6 +12,7 @@
 
     flex-direction: column;
     gap: 2em;
+    transform: scale(1.3);
 }
 .back_btn{
     padding: .5em 2em;
@@ -21,4 +22,15 @@
 }
 .line-noFound{
     font-size: 3em;
+}
+.contaier_gif{
+    overflow: hidden;
+    border-radius: 100%;
+    width: 280px;
+    height: 280px;
+    
+}
+.contaier_gif>img{
+    object-fit: cover;
+    object-position: -70px;
 }

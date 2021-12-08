@@ -96,9 +96,7 @@
 .circle{
     width: 15px;
     height: 15px;
-    border-radius: 50%;
-    background-color: var(--yellow);
-    
+    border-radius: 50%;    
 }
 .main_tech{
     display: flex;

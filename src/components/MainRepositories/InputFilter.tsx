@@ -1,3 +1,4 @@
+import { useContext } from 'react';
 import { Icon } from '../IconSVG/index';
 
 interface IProps {
@@ -7,8 +8,17 @@ interface IProps {
 }
 
 import './inputFilter.css'
+import { SearchContext } from '../../context/SearchContext';
 
 export const InputFilter = ({ name, label, options }: IProps) => {
+
+    const { filterRepository } = useContext(SearchContext)
+
+    const handleClick = (opt:string) => {
+        filterRepository(opt,name)
+    };
+
+
     return (
         <div className="container_select_input">
             <label className="input_select" htmlFor={label}>
@@ -27,7 +37,12 @@ export const InputFilter = ({ name, label, options }: IProps) => {
                 </div>
                 {
                     options?.map((opt, i) => (
-                        <label className={`item_option ${(options.length === i + 1) && 'no-border'}`} key={opt} htmlFor={label}> {opt} </label>
+                        <label 
+                            key={opt} 
+                            className={`item_option ${(options.length === i + 1) && 'no-border'}`} 
+                            htmlFor={label}
+                            onClick={()=>handleClick(opt)}
+                        > {opt} </label>
                     ))
                 }
             </div>

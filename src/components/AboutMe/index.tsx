@@ -1,8 +1,6 @@
 
 import './style.css'
 import { Icon } from '../IconSVG/index';
-import { useContext } from 'react';
-import { SearchContext } from '../../context/SearchContext';
 import { User } from '../../interfaces/user';
 
 const url = 'https://images.pexels.com/photos/1040881/pexels-photo-1040881.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'

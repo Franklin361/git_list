@@ -8,6 +8,27 @@ interface IProps{
 }
 
 export const RepositoryItem = ({ repoInfo }:IProps) => {
+    console.log('reps')
+    const getColortech = ():string => {
+         
+        switch (repoInfo.language?.toLowerCase()) {
+            case 'css': return '#a75dd8';
+            case 'javascript': return '#daa520';
+            case 'typescript': return '#1b82aa';
+        
+            default: return 'grey';
+        }
+    }; 
+
+    const getDateRepo = (date:string):string => {
+        const dateFinal = new Date(date).toLocaleDateString('es-Es',{
+            day:'2-digit',
+            month:'2-digit',
+            year:'numeric'
+        })
+        return dateFinal.toString()
+    };
+
     return (
         <div className="repository">
             <div>
@@ -24,7 +45,7 @@ export const RepositoryItem = ({ repoInfo }:IProps) => {
                         <Icon name="git" size={18} />
                         <span className="git_number">{repoInfo.watchers_count}</span>
                     </div>
-                    <span className="updated_short">Updated 21 hours ago</span> {/* repoInfo.updated_at */}
+                    <span className="updated_short">created { getDateRepo(repoInfo.created_at) }</span> {/* repoInfo.updated_at */}
                 </div>
                 
                 <span className="description_project">
@@ -43,8 +64,8 @@ export const RepositoryItem = ({ repoInfo }:IProps) => {
 
                 <div className="container_details_down">
                     <div className="main_tech">
-                        <div className="circle"></div>
-                        <span className="tech_name">{repoInfo.language}</span>
+                        <div className={`circle`} style={{backgroundColor:`${getColortech()}`}} ></div>
+                        <span className="tech_name">{repoInfo.language ?? 'No lenguaje'}</span>
                     </div>
                     <div className="start_mini">
                         <Icon name="start" size={18} />
@@ -55,13 +76,13 @@ export const RepositoryItem = ({ repoInfo }:IProps) => {
                         <span className="git_mini_number">{repoInfo.forks}</span>
                     </div>
                     <div className="updated">
-                        <span>Updated 2 days ago</span>
+                        <span>Updated {getDateRepo(repoInfo.updated_at)}</span>
                     </div>
                 </div>
             </div>
 
             <div className="container_box_2">
-                <div className="box_start">
+                <div className="box_start ">
                     <Icon name="start" size={22} />
                     <span>Start</span>
                 </div>
