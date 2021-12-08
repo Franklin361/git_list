@@ -22,30 +22,40 @@ export const SearchProvider: React.FC = ({ children }) => {
 
     const searchUser = async (user: string) => {
         try {
-            
+
             setLoading(true)
             setSearchRepos([]);
+
             const fetchUser = await fetch(`https://api.github.com/users/${user}`);
             const userData = await fetchUser.json() as User;
             setUser(userData);
-            
-            const fetchRepos = await fetch(`${userData.repos_url}?per_page=15`);
-            
-            const reposData = await fetchRepos.json() as Repository[];
-            setRepos(reposData);
+
+            await searchReposUser(userData.repos_url);
+
             setLoading(false);
 
         } catch (error) {
             setLoading(false)
-            setRepos([])
-            setSearchRepos([])
-            setUser({} as User)
+            resetState()
         }
     };
 
-    const searchRepository = async(repository: string) => {
+    const searchReposUser = async (url: string) => {
+        const fetchRepos = await fetch(`${url}?per_page=15`);
+        const reposData = await fetchRepos.json() as Repository[];
+        if (reposData.length !== 0) setRepos(reposData);
+        else resetState();
+    };
+
+    const resetState = () => {
+        setRepos([])
+        setSearchRepos([])
+        setUser({} as User)
+    };
+
+    const searchRepository = async (repository: string) => {
         const searchRepos = repos.filter(repo => repo.name.toLowerCase().includes(repository.toLowerCase()));
-        if(searchRepos.length === 0) alert(`No Found repository whit name: ${repository}`)
+        if (searchRepos.length === 0) alert(`No Found repository whit name: ${repository}`)
         setSearchRepos(searchRepos);
     };
 
@@ -53,7 +63,7 @@ export const SearchProvider: React.FC = ({ children }) => {
         <SearchContext.Provider
             value={{
                 searchUser,
-                searchRepository,searchRepos,
+                searchRepository, searchRepos,
                 user,
                 repos,
                 loading,
