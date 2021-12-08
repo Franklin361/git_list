@@ -6,8 +6,7 @@
 
 .input_filter {
   flex: 1;
-  outline: 1px solid var(--grey);
-  border: none;
+  border: 1px solid var(--grey);
   border-radius: 8px;
   background-color: var(--bg);
   padding: 0.8em;

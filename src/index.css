@@ -43,7 +43,6 @@ body::-webkit-scrollbar{
   grid-template-columns: 20.5% 79.5%;
   width: 95%;
   margin: 2em auto auto auto;
-  /* outline: auto; */
 }
 
 @media screen and (max-width: 600px) {

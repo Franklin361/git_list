@@ -24,7 +24,7 @@ export const SearchProvider: React.FC = ({ children }) => {
         try {
             
             setLoading(true)
-            setSearchRepos([])
+            setSearchRepos([]);
             const fetchUser = await fetch(`https://api.github.com/users/${user}`);
             const userData = await fetchUser.json() as User;
             setUser(userData);

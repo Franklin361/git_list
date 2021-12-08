@@ -16,7 +16,7 @@
 .type_repository{
     display: inline-block;
     background-color: var(--bg);
-    outline: 1px solid var(--grey);
+    border: 1px solid var(--grey);
     color: var(--grey);
     border-radius: 8px;
     padding: 0 1em;
@@ -75,7 +75,6 @@
     margin: 1em 0 0 0;
 }
 .container_tags{
-    /* outline: auto; */
     display: flex;
     gap: .5em;
     margin: 1em 0 0 0;
