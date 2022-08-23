@@ -1,4 +1,4 @@
-# Rutas App 🛣️
+# Git List 📋
 **Simple GitHub clone, to search users and list their repositories**
 
 ![Demo](https://res.cloudinary.com/dnxchppfm/image/upload/v1661271445/franklin-page/gitlist_1_bcownl.webp)
